@@ -1,0 +1,6 @@
+default: -p parallel
+debug: -t @bond_price
+trunk: -t @trunk --format pretty --format json --out=reports/report.json
+bond: -t @bond
+finance: -t @finance
+parallel: -t @trunk --format pretty --format ParallelTests::Cucumber::FailuresLogger --out reports/cucumber_failures.log
