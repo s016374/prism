@@ -1,6 +1,7 @@
-default: -p debug
+default: -p android
 debug: -t @trunk
 ios: -t @ios
+android: -t @android
 trunk: -t @trunk --format pretty --format json --out=reports/report.json
 bond: -t @bond
 finance: -t @finance

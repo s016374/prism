@@ -1,6 +1,6 @@
 module Prism
   module Pages
-    module App
+    module Android
       class Login < SitePrism::Page
         elements :navigation_bar, :accessibility_id, 'UICatalog'
 
