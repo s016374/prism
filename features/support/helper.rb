@@ -1,3 +1,9 @@
+require 'pry-byebug'
+require 'capybara'
+require 'capybara/cucumber'
+require 'capybara/rspec'
+require 'site_prism'
+
 module Prism
   module Helper
     def self.included(klass)
