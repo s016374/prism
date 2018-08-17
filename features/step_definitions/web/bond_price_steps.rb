@@ -1,8 +1,6 @@
-include Prism::Helper
-
 Given(/^visit bond yieldbond$/) do
   @bond_price_yield_bond = @app.bond_price_yield_bond
-  @bond_price_yield_bond.load { wait_when_using_poltergeist }
+  @bond_price_yield_bond.load { Prism::Helper.wait_when_using_poltergeist }
   @bond_price_yield_bond.wait_for_bond_market_credit_today
   @bond_price_yield_bond.wait_for_bond_screener_navigator_filter_name
 end

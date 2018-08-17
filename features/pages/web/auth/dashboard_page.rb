@@ -1,6 +1,6 @@
 module Prism
   module Pages
-    module DM
+    module Web
       class Dashboard < SitePrism::Page
         set_url "/dashboard"
         set_url_matcher /dashboard/

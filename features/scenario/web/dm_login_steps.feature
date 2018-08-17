@@ -1,3 +1,4 @@
+@web
 @trunk
 @signin
 Feature: DM login

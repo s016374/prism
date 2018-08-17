@@ -1,5 +1,6 @@
-default: -p parallel
-debug: -t @bond_price
+default: -p debug
+debug: -t @trunk
+ios: -t @ios
 trunk: -t @trunk --format pretty --format json --out=reports/report.json
 bond: -t @bond
 finance: -t @finance

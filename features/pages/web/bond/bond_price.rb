@@ -2,7 +2,7 @@ require_relative 'bond_common'
 
 module Prism
   module Pages
-    module DM
+    module Web
       class BondPriceYieldBond < SitePrism::Page
         set_url "/newdm-beta/#/main/bond/market/price/yieldbond"
         set_url_matcher /bond\/market\/price\/yieldbond/

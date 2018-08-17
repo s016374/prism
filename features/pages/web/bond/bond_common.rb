@@ -1,6 +1,6 @@
 module Prism
   module Pages
-    module DM
+    module Web
       class BondMarketCreditToday < SitePrism::Section
         set_default_search_arguments '#bond-container > div.bond-market-container.ng-scope > div > div.bond-market-credittoday-container.ng-scope > div'
 

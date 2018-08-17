@@ -1,9 +1,5 @@
-require 'capybara'
-require 'capybara/cucumber'
-require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'selenium-webdriver'
-require 'site_prism'
 require 'http'
 
 # local chorme for debug
@@ -58,17 +54,8 @@ end
 # end
 ####
 
-# run a server
-Capybara.run_server = false
-# max wait time
-Capybara.default_max_wait_time = ENV['CAPYBARA_MAX_WAIT_TIME'].to_i || 2
-# screenshot save path
-Capybara.save_path = "#{Dir.pwd}/screenshots"
-# root url
-Capybara.app_host = ENV['BASE_URL']
-
 def init_browser
-  Capybara.current_driver = ENV['CAPYBARA_BROWSER'].to_sym
+  Capybara.default_driver = ENV['CAPYBARA_BROWSER'].to_sym
   # script driver
   Capybara.javascript_driver =  case ENV['CAPYBARA_BROWSER']
                                 when /poltergeist/

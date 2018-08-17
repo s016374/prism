@@ -1,6 +1,6 @@
 module Prism
   module Pages
-    module DM
+    module Web
       class Signup < SitePrism::Page
         set_url_matcher /signup/
 

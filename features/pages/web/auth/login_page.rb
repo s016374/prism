@@ -1,6 +1,6 @@
 module Prism
   module Pages
-    module DM
+    module Web
       class Signin < SitePrism::Section
         element :username, '#inputUsername'
         element :password, '#inputPassword'

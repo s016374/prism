@@ -1,4 +1,6 @@
 tryit.rb
+builds/*.zip
+builds/*.apk
 /features/support/env.rb
 /reports/*.html
 /reports/*.json

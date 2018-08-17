@@ -1,10 +1,15 @@
 Before do |_scenario|
-  init_browser
-  @app = Prism::App.new
-end
-
-Before('~@signin') do |_scenario|
-  init_browser_with_cookie
+  tags = _scenario.source_tag_names
+  if tags.include? '@web'
+    init_browser
+    init_browser_with_cookie unless tags.include? '@signin'
+    @app = Prism::App.new
+  elsif tags.include?('@ios') || tags.include?('@android')
+    init_device
+    promote_methods
+  else
+    raise "tags must include @ios @android or @web"
+  end
 end
 
 ###
@@ -21,7 +26,7 @@ end
 ###
 
 After do |_scenario|
-  if _scenario.failed? && !ENV['CAPYBARA_BROWSER'].include?('headless')
+  if false && _scenario.failed? && !ENV['CAPYBARA_BROWSER'].include?('headless')
     screenshot_file = "screenshot_#{Time.now.strftime("%Y-%m-%d-%H%M")}.png"
     # save screenshot
     Capybara.current_session.save_screenshot screenshot_file
